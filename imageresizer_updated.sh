@@ -72,6 +72,12 @@ if [ $FILETYPE == ".jpeg" ];
 then find ./ -name "*.jpg" -exec sips -Z ${PIXEL} {} \;
 
 fi
+
+echo ""
+echo "Boiling water..."
+sleep 2
+echo "Water has reached boiling point"
+sleep 1
  
 if [ $FILETYPE == ".png" ];
 
