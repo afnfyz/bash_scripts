@@ -39,7 +39,7 @@ then
 	echo ""
 	echo "WARNING!"
 	echo ""
-	echo "This will effect the original files in this directory."
+	echo "This will effect the original files in this directory and it's subdirectories."
 	echo "Backup original files to a different directory if you wish to preseve them."
 echo ""
 echo "Do you wish to proceed?"
