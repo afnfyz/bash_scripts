@@ -1,5 +1,9 @@
 #!/bin/bash
 
+lines=$(tput lines)
+cols=$(tput cols)
+
+
 echo "Welcome to The Image Formater!"
 
 echo ""
