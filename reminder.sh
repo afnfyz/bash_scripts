@@ -32,6 +32,7 @@ echo ""
 # The +"%m/%d/%Y %H:%M" option specifies the output format that the command should use.
 #at_time=$(date -d "$datetime" +"%Y%m%d%H%M")
 
-# Set reminder using at command.
-at $datetime touch reminder.txt /home/${USER}/ && cat "Reminder Message: ${msg}" > /home/${USER}/reminder.txt && cat reminder.txt
-echo "Reminder set for $datetime."
+at $datetime <<EOF
+echo "Reminder Message: ${msg}" > ./reminder.txt
+cat ./reminder.txt
+EOF
