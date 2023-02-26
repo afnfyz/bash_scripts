@@ -4,7 +4,7 @@
 script_dir=$(dirname $0)
 
 # Display welcome message.
-#cat ./ascii/clock.txt
+# cat ./ascii/clock.txt
 
 cat << "EOF" 
        _..._
@@ -42,6 +42,7 @@ if ! which at > /dev/null; # The ! is the NOT logical operator which reverses th
 fi
 
 # Set msg variable from input.
+echo ""
 read -p "Enter reminder message: " msg
 echo ""
 
@@ -61,7 +62,11 @@ echo ""
 # The +"%m/%d/%Y %H:%M" option specifies the output format that the command should use.
 #at_time=$(date -d "$datetime" +"%Y%m%d%H%M")
 
-at $datetime << EOF
-echo "Reminder Message: ${msg}" > "$script_dir/reminder.txt"
+at -M $datetime << EOF
+echo "Reminder Message: ${msg}" > "reminder.txt"
+echo "\n" >  $(tty) # Thanks Ali :) !
+cat "reminder.txt"  > $(tty)
+
 cat  "$script_dir/reminder.txt"
+kill -2  $(pidof bash) # Sends CTRL+C signal.
 EOF
