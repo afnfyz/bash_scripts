@@ -1,12 +1,44 @@
 #!/bin/bash
 
+#...............................
+#Documentation:
+
+# This script allows you to set a reminder that will display onto the terminal.
+# It uses the at command to do so.
+# the format that can be used to set the time is as follows:
+#
+# YYMMDDhhmm[.ss]:   Specify an abbreviated year, month, day, hour, minute, and optionally seconds.
+# CCYYMMDDhhmm[.ss]: Specify a full year, month, day, hour, minute, and optionally seconds.
+# now:		     Indicates the current day and time and immediate execution.
+# midnight:	     Indicates 00:00 AM.
+# noon: 	     Indicating 12:00 PM.
+# teatime: 	     Interpreted as 4 PM.
+# AM: 		     Indicates time before 12:00 PM.
+# PM: 		     Indicates time after 12:00 PM.
+# today: 	     The current day.
+# tomorrow: 	     The day after the current day.
+#
+# One can also specify relative time using by stating:
+# now +
+# x minutes
+# x hours
+# x days
+# x weeks
+# x months
+# x years
+# substituting x with the desired integer. e.g (now +5 minutes)
+
+ # To remove all at command jobs one can use the atrm command with the -a option.
+ # To reset at command job counter one can delete the /var/at/atjobs file.
+
+
 
 script_dir=$(dirname $0)
 
 # Display welcome message.
 # cat ./ascii/clock.txt
 
-cat << "EOF" 
+cat << "EOF"
        _..._
       |_____|
       |_____|
@@ -65,8 +97,8 @@ echo ""
 at -M $datetime << EOF
 echo "Reminder Message: ${msg}" > "reminder.txt"
 echo "\n" >  $(tty) # Thanks Ali :) !
-cat "reminder.txt"  > $(tty)
+cat "script_dir/reminder.txt"  > $(tty)
 
-cat  "$script_dir/reminder.txt"
+cat  "${script_dir}/reminder.txt"
 kill -2  $(pidof bash) # Sends CTRL+C signal.
 EOF
