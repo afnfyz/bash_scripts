@@ -4,12 +4,38 @@
 script_dir=$(dirname $0)
 
 # Display welcome message.
-cat ./ascii/clock.txt
+#cat ./ascii/clock.txt
+
+cat << "EOF" 
+       _..._
+      |_____|
+      |_____|
+      |_____|
+      |_____|
+      |_____|
+     / _____ \
+     ||  '  ||
+     ||  |  ||
+     ||- | -||)
+     ||   \ ||
+     ||__.__||
+     \_______/
+      |_____|
+      |_____|
+      |_____|
+      |_____|	         ____
+       (   /_ /_   _  _   /
+       |/|/(-(( ()//)(-  (()
+	 ___  ___ _  _  _  _ _  __  ___ ___
+	 ))_) )L  )\/,) )) )\`) ))\ )L  ))_)
+	((`\ ((_ ((`(( (( ((`( ((_/((_ ((`\
+EOF
 
 # Check if which command finds the at command.
 # The /dev/null removes the PATH output from the which command.
 if ! which at > /dev/null; # The ! is the NOT logical operator which reverses the exit status of command.
 	then
+  echo ""
   echo "Error: at command not installed."
   echo "Please install or use crontab to set reminders"
   exit
