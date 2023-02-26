@@ -35,7 +35,7 @@ echo ""
 # The +"%m/%d/%Y %H:%M" option specifies the output format that the command should use.
 #at_time=$(date -d "$datetime" +"%Y%m%d%H%M")
 
-at -M $datetime << EOF
+at $datetime << EOF
 echo "Reminder Message: ${msg}" > "$script_dir/reminder.txt"
 cat  "$script_dir/reminder.txt"
 EOF
