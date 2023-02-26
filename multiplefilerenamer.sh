@@ -1,9 +1,10 @@
 #!/bin/bash
 
-
 echo "Welcome to the file renamer!"
-echo "This will  rename all file by adding sequential numberss in the current directory" 
+echo "This will rename all files by adding sequential numbers in the current directory"
 echo "first sorting in ascending order based on the name of the file"
+echo ""
+
 read -p "Choose preferred name for files: " name
 # Sort the files in the current directory by name
 files=($(ls -1v))
