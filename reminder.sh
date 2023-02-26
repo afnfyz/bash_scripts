@@ -18,8 +18,8 @@ echo "Remind you in how long?"
 echo "(e.g. 1 hour or 30 minutes or 1 hour + 30 minutes etc)"
 read time
 	else
-echo "This app uses the at command to set reminders."
-echo " please install or use crontab to set reminder"
+echo "at command not installed."
+echo "Please install or use crontab to set reminders"
 
 fi
 at now + ${time}  
