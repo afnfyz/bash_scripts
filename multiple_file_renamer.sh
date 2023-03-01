@@ -12,7 +12,8 @@ files=($(ls -1v))
 counter=1
 
 for file in "${files[@]}"; do
-  if [ -f "$file" ] && [ "${file##*.}" != "sh" ] && [ "${file##*.}" != "md" ]; then
+#this if function makes sures that the files in the list are files and not directories using the -f option
+  if [ -f "$file" ] && [ "${file##*.}" != "sh" ] && [ "${file##*.}" != "md" ]; then 
     # Get the file extension
  extension="${file##*.}"
     # Generate the new filename with sequential numbering
