@@ -1,14 +1,14 @@
 #!/bin/bash
 
 compress(){
-tar -czf "${farg}" "$1" "$2" "$3"
+tar -czf "${farg}" "$@"
 }
 
 while getopts "f:" OPTION; do
     case "$OPTION" in
 	f)
-	  farg="$OPTARG"
-	  compress
+	  farg="${OPTARG}"
+	  compress "$@"
 	  ;;
 	*)
 	  echo "Script Requirements: [-f <file name>]" 
