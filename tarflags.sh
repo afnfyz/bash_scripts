@@ -12,5 +12,6 @@ while getopts "f:" OPTION; do
 	  ;;
 	*)
 	  echo "Script Requirements: [-f <file name>]" 
+	  ;;
     esac
 done
