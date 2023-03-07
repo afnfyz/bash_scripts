@@ -18,9 +18,21 @@ while IFS=, read -r name num mail; do
   email_array[i++]=$mail
 done < ~/Downloads/contacts.csv
 
-echo ${name_array[@]}
+full=("${name_array[@]}" "${number_array[@]}" "${email_array[@]}")
+
+for contacts in "${full[@]}"
+do
+echo ${contacts}
+done
 
 : '
+for i in ${!name_array[@]} ${!number_array[@]} ${!email_array[@]}
+do
+echo ${name_array[i]}
+echo ${number_array[i]}
+((i++))
+done
+
 for contact in "${array[@]}"; do
   # Extract the name, phone, and email fields from the tab-separated line
   name=$(echo "$contact" | cut -f1)
