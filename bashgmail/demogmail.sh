@@ -4,10 +4,10 @@
 EMAIL_CONTENT=$(cat ./email_body.txt)
 
 # Set the email address for the recipient
-TO_EMAIL="dev.afoyez@gmail.com"
+TO_EMAIL=""
 
 # Set the email address for the sender
-FROM_EMAIL="dev.afoyez@gmail.com"
+FROM_EMAIL=""
 
 # Set the email subject
 SUBJECT="Automated test"
@@ -35,8 +35,7 @@ CLIENT_SECRET=
 # Get a new access token with the refresh token
 ACCESS_TOKEN=$(curl -s \
   --request POST \
-  --data 
-"client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&refresh_token=$REFR$
+  --data "client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&refresh_token=$REFRESH_TOKEN&grant_type=refresh_token" \
   https://oauth2.googleapis.com/token | jq -r .access_token)
 
 # Send the email using the Gmail API
