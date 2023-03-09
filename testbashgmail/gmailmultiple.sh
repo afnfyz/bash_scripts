@@ -1,14 +1,17 @@
 #!/bin/bash
 
-: '
+
 i=0
 while IFS=, read -r name num mail; do
   name_array[i++]=$name
   number_array[i++]=$num
   email_array[i++]=$mail
-done < ~/Downloads/contacts.csv
-'
-email_array=()
+done < ~/Downloads/test.csv
+
+
+#email_array=()
+
+
 # Set the email content
 EMAIL_CONTENT=$(cat ./email_body.txt)
 
