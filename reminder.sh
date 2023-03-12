@@ -101,7 +101,7 @@ echo ""
 at -M $datetime << EOF
 echo "Reminder Message: ${msg}" > "reminder.txt"
 echo "\n" >  $(tty) # Thanks Ali :) !
-cat "script_dir/reminder.txt"  > $(tty)
+cat "${script_dir}/reminder.txt"  > $(tty)
 
 cat  "${script_dir}/reminder.txt"
 kill -2  $(pidof bash) # Sends CTRL+C signal.
