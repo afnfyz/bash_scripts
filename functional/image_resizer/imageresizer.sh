@@ -1,8 +1,11 @@
 #!/bin/bash
 
-echo "This is the IMAGERESIZER tool!"
-echo "Which image would you like to resize?"
 echo ""
+echo "This is the IMAGERESIZER tool!"
+echo ""
+echo "Please navigate to the folder which contains the image(s) before proceding"
+echo ""
+echo "Which image would you like to resize?"
 read IMGNAME
 
 echo "Set max pixel resolution"

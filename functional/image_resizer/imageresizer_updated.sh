@@ -1,7 +1,9 @@
 #!/bin/bash
 
+echo ""
 echo "This is the IMAGERESIZER tool!"
 echo ""
+echo "Please navigate to the folder which contains the image(s) before proceding" 
 
 echo "Set max pixel resolution for image:"
 echo "example: 500"
@@ -15,7 +17,7 @@ read YN
 
 if [ $YN == "N" ];
 then 
-	echo "Which specific image would you like to resize?"
+echo "Which specific image would you like to resize?"
 echo ""
 read IMGNAME
 echo "Boiling Water..."
@@ -39,7 +41,7 @@ then
 	echo ""
 	echo "WARNING!"
 	echo ""
-	echo "This will effect the original files in this directory and it's subdirectories."
+	echo "This will effect all the original files in this directory and it's subdirectories."
 	echo "Backup original files to a different directory if you wish to preseve them."
 echo ""
 echo "Do you wish to proceed?"
