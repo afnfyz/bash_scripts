@@ -7,7 +7,11 @@ echo "Please enter a numberical value"
 fi
 chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+"
 
+psswd=""
 for i in $(seq 1 ${length})
 do
-    echo -n "${chars:RANDOM%${#chars}:1}"
+    psswd=${psswd}${chars:RANDOM%${#chars}:1}
+((i++))
 done
+
+echo "Password: ${psswd}"
