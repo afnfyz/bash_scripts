@@ -8,6 +8,7 @@ function ctrl_c() {
 }
 
 # set up trap to catch CTRL+C signal
+# function called when trap is caught
 trap ctrl_c INT TERM
 
 # infinite loop
